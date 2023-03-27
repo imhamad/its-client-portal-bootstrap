@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--    Viewport compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--  Prevent Zooming out on Mobile Devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--    Bootstrap with CDN for fast loading -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!--  Compiled CSS | Source Code to be done in SCSS -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!--    Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>TrakPay | No Pending Payroll Errors</title>
+
+    <!-- Nice Fade in affect -->
+  </head>
+  <body>
+    <section class="dashboard_layout_wrapper d-flex flex-row">
+      <!-- Sidebar -->
+      <aside class="layout_sidebar" style="width: 300px" id="sidebar-menu">
+        <div class="menu_close d-flex justify-content-end">
+          <button type="button" onclick="toggleMenu()">
+            <img
+              src="../assets/images/layout/Vector.svg"
+              alt=""
+              class="d-none d-lg-block"
+            />
+          </button>
+          <button type="button" onclick="closeMenu()">
+            <img
+              src="../assets/images/layout/Vector.svg"
+              alt=""
+              class="d-lg-none d-block"
+            />
+          </button>
+        </div>
+        <div class="sidebar_list">
+          <div class="list_item">
+            <a href="/dashboard/no_payroll_errors.html" class="d-flex gap-3">
+              <!-- <img src={item?.activeIcon} /> -->
+              <img src="../assets/images/layout/dashboard-active.svg" />
+              <span class="active" id="list-text">Dashboard</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="/policy_and_payroll" class="d-flex gap-3">
+              <img src="../assets/images/layout/policy.svg" />
+              <span class="list-text">Policy & Payroll</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="/employees" class="d-flex gap-3">
+              <img src="../assets/images/layout/employee.svg" />
+              <span class="">Employee Roster</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="/upload_payroll" class="d-flex gap-3">
+              <img src="../assets/images/layout/upload-payroll.svg" />
+              <span class="">Upload Payroll</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="/billing_information" class="d-flex gap-3">
+              <img src="../assets/images/layout/billing.svg" />
+              <span class="">Billing Information</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="/contacts" class="d-flex gap-3">
+              <img src="../assets/images/layout/contacts.svg" />
+              <span class="">Contacts</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="/email_notification" class="d-flex gap-3">
+              <img src="../assets/images/layout/email-notification.svg" />
+              <span class="">Email Notification</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="layout_inside_content pe-5">
+        <!-- Header -->
+        <header class="d-flex flex-wrap justify-content-between header">
+          <div class="d-flex gap-3 align-items-center">
+            <button
+              class="border-0 bg-transparent d-lg-none d-block"
+              type="button"
+              onclick="openMenu()"
+            >
+              BAR
+            </button>
+            <img
+              src="../assets/images/logo.svg"
+              class="logo"
+              style="width: 224px; height: 64px"
+            />
+          </div>
+          <div class="d-flex align-items-center gap-4">
+            <div class="notifi_menu">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle bg-transparent border-0"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div
+                    class="notif_wrapper position-relative d-flex align-items-center"
+                  >
+                    <img
+                      src="../assets/images/layout/notification.svg"
+                      alt="Notification"
+                      class="notification"
+                    />
+                    <div class="notification_circle"></div>
+                  </div>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >You have no payroll errors</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="header_profile">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle bg-transparent border-0"
+                  type="button"
+                  id="dropdownMenuButton2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="../assets/images/layout/profile.png"
+                    alt="Profile"
+                    class="profile_image"
+                  />
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Log Out</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!------ Main Content ------>
+        <main class="dashboard_content_wrapper">
+            <section class="error_fixing_wrapper overflow-hidden mb-5" style="padding-bottom: 100px">
+                <h1 class="title_heading">Error Fixing and Endorsement Requests - 1 of 1 Errors for the following Pay Period</h1>
+
+                <!--  Table  -->
+                <div class="w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon">
+                    <img src="../assets/images/slider.png" alt="Slider" style="width: 25px" />
+                </div>
+                <div class='my-4 w-100 table_wrapper'>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Primary User Company Name</th>
+                                <th>Named Insured</th>
+                                <th>FEIN</th>
+                                <th>Client Number</th>
+                                <th>Carrier</th>
+                                <th>Policy</th>
+                                <th>Effective date</th>
+                                <th>Expire date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Error Fixing Enhance</td>
+                                <td></td>
+                                <td>95-3688555</td>
+                                <td>11111</td>
+                                <td>The Hartford</td>
+                                <td>tbd</td>
+                                <td>2022-09-01</td>
+                                <td>2023-09-01</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!--  End  -->
+
+                <h1 class="mt-2 title_heading">Class Codes</h1>
+                <p class="desc_para">{"It looks like you're trying to report payroll for an employee with a state that is on your policy, but with a class code that is not on your policy for this state. Please either choose from the existing class code(s) on your policy for your employee's state:"}</p>
+                <select
+                    placeholder="Please choose a class code"
+                    class="input"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#classCodes"
+                >
+                    <option defaultValue disabled>Please choose a class code</option>
+                    <option>Select here if no codes match</option>
+                    <option value="NY 8810 - Clerical Office Employees NOC">NY 8810 - Clerical Office Employees NOC</option>
+                    <option value="NY 8810 - Clerical Office Employees NOC">NY 8810 - Clerical Office Employees NOC</option>
+                    <option value="NY 8810 - Clerical Office Employees NOC">NY 8810 - Clerical Office Employees NOC</option>
+                    <option value="NY 8810 - Clerical Office Employees NOC">NY 8810 - Clerical Office Employees NOC</option>
+                </select>
+                <p class="desc_para mt-4">Explore override setting options to better automate your paygo WC reporting.</p>
+                <h5 style="font-weight: 600">OR</h5>
+                <h1 class="mt-3 title_heading">Class Code Description</h1>
+                <p class="desc_para mt-1">If none of these codes fit the description of what your employee does, then please explain to us what they do so our experts can figure out the most appropriate code to use, and request that your policy be endorsed with this code for the employee's state. Please enter your class code description:</p>
+                <input type="text" class="input" />
+                <h1 class="mt-4 title_heading">Address</h1>
+                <div class="mt-3">
+                    <input type="text" placeholder="Number and Street" class="w-50 input mb-2 d-block" />
+                    <input type="text" placeholder="City" class="w-50 input mb-2 d-block" />
+                    <input type="text" placeholder="State" class="w-50 input mb-2 d-block" />
+                    <input type="text" placeholder="Zip Code" class="w-50 input mb-2 d-block" />
+                </div>
+
+                <div class="d-flex gap-2 mt-4">
+                    <button
+                        type="button"
+                        class="next_button"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#overrideModal"
+                    >Process & Go To Next</button>
+                    <button type="button" class="cancel_button">Cancel</button>
+                </div>
+            </section>
+        </main>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div
+        class="d-flex flex-column flex-sm-row flex-wrap justify-content-between footer_row"
+      >
+        <img src="../assets/images/layout//logo-white.svg" alt="" />
+        <div class="d-flex gap-2 align-items-center mb-3 footer_col">
+          <img
+            src="../assets/images/layout/mail-white.svg"
+            style="width: 17px; height: 13px"
+          />
+          <span class="">info@trakpay.com</span>
+        </div>
+        <div class="d-flex gap-2 align-items-center mb-3 footer_col">
+          <img
+            src="../assets/images/layout/phone-white.svg"
+            style="width: '14px'; height: 14px"
+          />
+          <span>+1-305-537-6136</span>
+        </div>
+      </div>
+      <p class="text-center copyright_text">
+        Copyright 2023 All rights reserved
+      </p>
+    </footer>
+
+    <!-- Class Codes Modal -->
+    <div 
+        class="modal fade" 
+        id="classCodes" 
+        tabindex="-1"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <section class='error_modal p-3'>
+                    <h3 class='title'>Confirm</h3>
+                    <p>Selected state-code combo:</p>
+                    <p>NY 8810</p>
+                    <p>You are already applying this state-code combo to the following pay period:</p>
+                    <p>Beign Date: <strong>05/07/2021</strong>,  End Date: <strong>05/13/2021</strong>,  Check Date: 11/01/2022</p>
+                    <p>This employee has other payrolls with currently pending errors. Do you want to apply this state-code combo to the following pay period(s) for this employee?</p>
+                    <p>Beign Date: <strong>05/07/2021</strong>,  End Date: <strong>05/13/2021</strong>,  Check Date: 11/01/2022</p>
+                    <div class='d-flex flex-wrap gap-2 px-2'>
+                        <button data-bs-dismiss="modal">Yes, Apply to all pending pay periods</button>
+                        <button data-bs-dismiss="modal">No, Only apply to this pay period</button>
+                        <button data-bs-dismiss="modal">Go Back</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overriding settings modal -->
+    <div class="overflow-auto overriding_modal">
+    <div class="modal fade" id="overrideModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <section class='overriding_modal_content px-4 py-3'>
+              <h4>State Class Code Override Settings</h4>
+              <p>With <strong style="font-weight: 600">TrakPay</strong>, you have the power to dynamically set overrides to help you better manage and automate your pay-as-you-go WC service.</p>
+              <p style="font-weight: 500">You have 3 different override settings you can choose from at this time. Please note that only one override option can be set for a state for all state-code combos. If you’d like to enable an override setting, please do so below:</p>
+                <div class="mb-3 w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon">
+                  <img src="../assets/images/slider.png" alt="Slider" style="width: 25px"/>
+              </div>
+              <div class='overriding_grid_wrapper'>
+                  <div class='overriding_grid'>
+                      <!--  grid header  -->
+                      <div class='grid_item header'>..A NEW PAYROLLCOMES INTOTRAKPAY AND..</div>
+                      <div class='grid_item header'>NO OVERRIDE IS SET</div>
+                      <div class='grid_item header'>BASIC STATE CODE OVER RIDE</div>
+                      <div class='grid_item header'>SEMI-SUPERSTATE CODEOVERRIDE</div>
+                      <div class='grid_item header'>SUPER STATE CODE OVER RIDE</div>
+
+                      <!--  grid body 1st row columns -->
+                      <div class="grid_item row_first_item">
+                          <p class='mt-2'>Employee payroll imported has a state-code combo that matches a valid state-code combo on the policy</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                          <img src="../assets/images/dashboard/plus-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+
+                      <!--  grid body 2nd row columns -->
+                      <div class="grid_item row_first_item">
+                          <p class='mt-2'>Employee payroll imported has a valid state, but no code on import, but employee already assigned valid state-code in TrakPay, and/or only 1 code is available for state on the policy</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                          <img src="../assets/images/dashboard/plus-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+
+                      <!--  grid body 3rd row columns -->
+                      <div class="grid_item row_first_item">
+                          <p class='mt-2'>Employee payroll imported has a valid state, but no code on import, and employee is NOT already assigned valid state-code in TrakPay, and/or there is more than 1 code available for state on the policy</p>
+                      </div>
+                      <div class="grid_item error_item">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/error-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Result in error to be fixed via intuitive error fixing feature</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                          <img src="../assets/images/dashboard/plus-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                          <img src="../assets/images/dashboard/plus-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                          <img src="../assets/images/dashboard/plus-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+
+                      <!--  grid body 4th row columns -->
+                      <div class="grid_item row_first_item">
+                          <p class='mt-2'>Employee payroll imported has a valid state, but no code on import, and employee is NOT already assigned valid state-code in TrakPay, and/or there is more than 1 code available for state on the policy</p>
+                      </div>
+                      <div class="grid_item error_item">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/error-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Employee payroll imported has an invalid state-code combo that is not on the policy</p>
+                      </div>
+                      <div class="grid_item error_item">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/error-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Employee payroll imported has an invalid state-code combo that is not on the policy</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                          <img src="../assets/images/dashboard/plus-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+                      <div class="grid_item ">
+                        <div className='d-flex gap-1 justify-content-center'>
+                          <img src="../assets/images/dashboard/sucess-icon.svg" alt="Success" />
+                          <img src="../assets/images/dashboard/plus-icon.svg" alt="Success" />
+                        </div>
+                          <p class='mt-2'>Pass through normally/do not use overridey</p>
+                      </div>
+
+                      <div class='grid_item footer_item row_first_item'>***Select One***</div>
+                      <div class='grid_item footer_item'>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          </div>
+                      </div>
+                      <div class='grid_item footer_item'>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          </div>
+                      </div>
+                      <div class='grid_item footer_item'>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          </div>
+                      </div>
+                      <div class='grid_item footer_item'>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <p class='text-center mt-4'>Override setting being applied to the following state-code-combo: CA 9079</p>
+              <p class='text-center '>This override will affect all employees with their work state assigned to CA</p>
+              <div class='d-flex justify-content-center gap-2 mt-2 pb-3'>
+                  <button type='button' class='orverride_save'>Save</button>
+                  <button type='button' class='orverride_close'>Close</button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

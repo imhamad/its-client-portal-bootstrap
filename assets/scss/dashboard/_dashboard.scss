@@ -1,0 +1,310 @@
+.no_payroll_error_card {
+  @include payrollCard($sucess);
+}
+.payroll_error_card {
+  @include payrollCard($errorLight);
+  @include md-screen {
+    width: 100%;
+  }
+  width: 49%;
+}
+
+.frequent_links {
+  margin-top: 160px;
+  h1 {
+    color: #858585;
+    font-weight: 700;
+    font-size: 30px;
+  }
+  .frequent_card_row {
+    @include lg-screen {
+      margin-bottom: 100px;
+    }
+    gap: 34px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    .freq_card_col {
+      @include lg-screen {
+        margin-bottom: 30px;
+      }
+      @include md-screen {
+        width: 100% !important;
+      }
+      width: 281px;
+      height: 161px;
+      background-color: $lightGray-bg;
+      border-radius: 10px;
+      box-shadow: 0px 2px 12px 0px #00000033;
+      text-align: center;
+      &:hover {
+        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.3);
+      }
+      div {
+        padding: 0 30px;
+      }
+      .card_text {
+        @include sm-screen {
+          margin-top: 0;
+        }
+        color: #a6a6a6;
+        font-size: 16px;
+        margin-top: 20px;
+      }
+      .desc_text {
+        font-size: 12px;
+        color: #858585;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+// Error Fixing page styles
+
+.error_fixing_wrapper {
+  .title_heading {
+    font-size: 24px;
+    font-weight: 600;
+    color: $primary;
+  }
+
+  .desc_para {
+    font-size: 18px;
+    font-weight: 300;
+    color: $darkText;
+  }
+
+  .next_button,
+  .cancel_button {
+    width: 159px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: white;
+    border: none;
+    font-weight: 300;
+  }
+  .next_button {
+    background: #7bb0ff;
+  }
+  .cancel_button {
+    background: $primary;
+  }
+}
+
+// input styling
+
+.input {
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 300;
+  border: 2px solid #dfdfdf;
+  padding: 0 20px;
+  border-radius: 5px;
+  outline: none;
+  padding-right: 20px;
+}
+
+// End
+
+// Error fixing modal
+.error_modal {
+  @include lg-screen {
+    max-width: 100%;
+  }
+  box-shadow: 4px 4px 15px 5px #00000040;
+  width: 741px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    text-align: left;
+  }
+  p {
+    font-size: 14px;
+    // line-height: 14px;
+    font-weight: 400;
+    text-align: left;
+    color: black;
+  }
+  button {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    &:first-child {
+      background-color: #7bb0ff;
+    }
+    &:nth-child(2) {
+      background-color: #89d087;
+    }
+    &:last-child {
+      background-color: #a3a3a3;
+    }
+  }
+}
+
+// State class code overriding settings
+.overriding_modal {
+  .modal-dialog {
+    @include lg-screen {
+      width: 100% !important;
+    }
+    width: 1080px !important;
+    max-width: 100% !important;
+  }
+  .overriding_modal_content {
+    width: 1100px;
+    max-width: 100%;
+    background-color: white;
+    box-shadow: 3px 4px 10px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: auto;
+    h4 {
+      font-size: 20px;
+      font-weight: 700;
+      color: $primary;
+    }
+    p {
+      font-size: 12px;
+      font-weight: 400;
+    }
+    .overriding_grid_wrapper {
+      @include lg-screen {
+        overflow-x: auto;
+      }
+      position: relative;
+      width: 100%;
+      max-width: 100vw;
+    }
+    .overriding_grid {
+      width: 1030px;
+      display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      gap: 3px 2px;
+      .grid_item {
+        background-color: #bff2ad;
+        font-size: 12px;
+        text-align: center;
+        font-weight: 500;
+        width: 180px;
+        height: 120px;
+        max-height: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+      .header {
+        &:first-child {
+          width: 250px;
+        }
+        background-color: #d9d9d9;
+        padding: 20px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .row_first_item {
+        font-size: 10px !important;
+        width: 250px;
+        background-color: #eaeaea;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+      }
+      .error_item {
+        background-color: #ffc6c6;
+      }
+      .footer_item {
+        height: 38px;
+        background-color: #eaeaea;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        input {
+          cursor: pointer;
+        }
+      }
+    }
+    button {
+      @include primaryButton;
+    }
+    .orverride_close {
+      background-color: #b5b5b5;
+    }
+  }
+}
+
+.orverride_save {
+  @include primaryButton;
+  background-color: #7bb0ff;
+}
+
+// --------- Table styling -----------
+.table_wrapper {
+  overflow-x: auto;
+  position: relative;
+  max-width: 90vw;
+  width: 100%;
+  table {
+    @include lg-screen {
+      width: 992px !important;
+    }
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    table-layout: fixed;
+    display: table;
+    thead {
+      tr {
+        background-color: white;
+        th {
+          padding: 11px 0;
+          font-size: 13px;
+          color: black;
+          font-weight: 600;
+          text-align: left;
+          &:first-child {
+            padding-left: 20px;
+            width: 240px;
+          }
+        }
+      }
+    }
+    tbody {
+      border-bottom: 1px solid #eff3f9;
+      &:last-child {
+        border-bottom: none;
+      }
+      tr {
+        background-color: $lightGray-bg;
+        border-bottom: 10px solid white;
+        &:first-child {
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        &:last-child {
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        td {
+          padding: 11px 0;
+          color: black;
+          font-weight: 300;
+          font-size: 13px;
+          &:first-child {
+            padding-left: 20px;
+            width: 240px;
+          }
+        }
+      }
+    }
+  }
+}

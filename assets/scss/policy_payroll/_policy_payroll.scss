@@ -1,0 +1,188 @@
+.policy_and_payroll {
+  .policy_card_wrapper {
+    @include xl-screen {
+      width: 48%;
+    }
+    @include lg-screen {
+      width: 100%;
+    }
+    width: 32%;
+    .policy_card {
+      width: 100%;
+      border-radius: 10px;
+      background: #f7f7f7;
+      box-shadow: 1px 2px 13px rgba(0, 0, 0, 0.2);
+      padding: 20px 30px;
+      .boldText,
+      .lightText {
+        font-size: 13px;
+        line-height: 8px;
+        line-height: 15px;
+      }
+      .boldText {
+        font-weight: 500;
+        width: 50%;
+      }
+      .lightText {
+        font-weight: 400;
+      }
+    }
+    .card_related_link {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+      text-align: center;
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+}
+
+// Error fixing enhance page
+.error_fixing_enhance {
+  h1 {
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: left;
+    color: #858585;
+  }
+  .tabs_container {
+    .tabs_buttons {
+      button {
+        font-size: 14px;
+        font-weight: 300;
+        color: #433636;
+        border: none;
+        padding: 7px 18px;
+        background-color: transparent;
+        margin-right: 15px;
+      }
+      .active_tab {
+        transition: all 100ms ease-in-out;
+        font-size: 14px;
+        font-weight: 300;
+        background-color: #e78200;
+        padding: 7px 18px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+      }
+    }
+  }
+}
+
+.payroll_tab_content {
+  padding-bottom: 100px;
+  .download_button {
+    background-color: #7bb0ff;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: left;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+// Payroll modal
+.payroll_modal {
+  .modal-dialog {
+    @include lg-screen {
+      width: 100% !important;
+    }
+    width: 1176px !important;
+    max-width: 1176px !important;
+  }
+  .payroll_modal_content {
+    width: 100%;
+    padding: 15px 10px;
+    .title {
+      font-size: 16px;
+      font-weight: 500;
+      color: black;
+    }
+    .modal_table {
+      h6 {
+        font-size: 18px;
+        font-weight: 500;
+        color: $primary;
+      }
+    }
+  }
+}
+
+.processing_fees {
+  .processing_inner_tabs {
+    background-color: #f3f3f3;
+    padding: 5px;
+    width: 180px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    button {
+      font-size: 10px;
+      color: black;
+      border: none;
+      width: 50%;
+      padding: 0 7px;
+    }
+    .active {
+      background-color: #7bb0ff;
+      padding: 5px 0;
+      color: white;
+      border-radius: 5px;
+    }
+  }
+  .export_button {
+    height: 41px;
+    width: 163px;
+    border-radius: 5px;
+    background-color: #7bb0ff;
+    font-size: 16px;
+    color: white;
+    border: none;
+  }
+}
+
+// Biilling information
+.billing_information {
+  .refresh_container {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #7bb0ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  table {
+    thead tr th {
+      font-weight: 300;
+    }
+    tbody tr td {
+      font-weight: 500;
+      padding: 5px 0;
+    }
+  }
+  .add_billing_form {
+    max-width: 783px;
+    button {
+      width: 103px;
+      height: 50px;
+      border-radius: 5px;
+      color: white;
+      border: none;
+      font-size: 14px;
+      font-weight: 300;
+    }
+    .back {
+      background: #89d087;
+    }
+    .submit {
+      background: $primary;
+    }
+  }
+}

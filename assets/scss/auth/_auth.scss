@@ -1,0 +1,245 @@
+.wrapper {
+  width: 100%;
+  .imageWrapper {
+    @include lg-screen {
+      width: 100%;
+    }
+    width: 55%;
+    max-width: 100%;
+    .webImage {
+      @include lg-screen {
+        display: none;
+      }
+    }
+    .mobileImage {
+      display: none;
+      @include lg-screen {
+        display: block;
+      }
+    }
+  }
+  .formContentContainer {
+    @include lg-screen {
+      display: block;
+      width: 70%;
+    }
+    @include lg-screen {
+      width: 100%;
+      padding: 0 40px;
+    }
+    width: 30%;
+    max-width: 100%;
+    margin: 0 auto;
+    .contentWrapper {
+      @include lg-screen {
+        margin: 50px auto 100px auto;
+      }
+      @include sm-screen {
+        margin: 30px auto 100px auto;
+      }
+      width: 100%;
+      margin: 140px auto 50px auto;
+      text-align: center;
+      .logo {
+        @include sm-screen {
+          width: 178px;
+          height: 51px;
+        }
+      }
+      h6 {
+        @include sm-screen {
+          font-size: $font-mobile;
+          margin-top: 15px;
+        }
+        font-weight: 500;
+        color: $text-color;
+        font-size: $font-medium;
+        margin-top: 25px;
+      }
+      form {
+        @include sm-screen {
+          margin-top: 15px;
+        }
+        margin-top: 30px;
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+          @include sm-screen {
+            height: 44px;
+            font-size: $font-mobile;
+          }
+          height: 54px;
+          border-radius: 5px;
+          background-color: white;
+          border: 1px solid $border-color;
+          padding: 0 15px;
+          &::placeholder {
+            color: #c3c3c3;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+        .checkbox_wrapper {
+          label {
+            @include sm-screen {
+              font-size: $font-mobile;
+            }
+          }
+        }
+        .linkText {
+          @include sm-screen {
+            font-size: 12px;
+          }
+          width: 100%;
+          color: #404040;
+          font-size: 14px;
+          font-weight: $normal;
+          text-decoration: none;
+          width: 100%;
+        }
+        .submit_button {
+          @include sm-screen {
+            font-size: 16px;
+            height: 44px;
+          }
+          height: 54px;
+          border-radius: 5px;
+          border: 1px solid $primary;
+          font-size: 21px;
+          font-family: "Inter";
+          color: white;
+          background-color: $primary;
+        }
+        .sign_up_link {
+          @include sm-screen {
+            font-size: $font-mobile;
+          }
+          a {
+            text-decoration: none;
+          }
+          color: $text-color;
+          font-family: "Inter";
+          font-size: 16px;
+        }
+      }
+    }
+    .bottomContent {
+      .primary_text {
+        font-size: 12px;
+        color: $primary !important;
+      }
+      p {
+        color: #23232380;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// custom Tooltips
+
+// recover user
+.feinTooltip {
+  &:hover {
+    .feinTooltipContent {
+      display: block;
+    }
+  }
+  .feinTooltipContent {
+    @include tooltipContent;
+    z-index: 20;
+  }
+}
+
+.emailTooltip {
+  &:hover {
+    .emailTooltipContent {
+      display: block;
+    }
+  }
+  .emailTooltipContent {
+    @include tooltipContent;
+  }
+}
+// end
+
+// recover password
+.usernameTooltip {
+  &:hover {
+    .usernameTooltipContent {
+      display: block;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  .usernameTooltipContent {
+    @include tooltipContent;
+    z-index: 20;
+    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+}
+// end
+
+// Sign up
+.passwordTooltip {
+  &:hover {
+    .passwordTooltipContent {
+      display: block;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+  .passwordTooltipContent {
+    @include tooltipContent;
+    z-index: 20;
+    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.emailTooltip {
+  .signUp_emailTooltipContent {
+    @include tooltipContent;
+    top: -120px;
+    &::before {
+      top: 120px;
+      @include lg-screen() {
+        top: -7px;
+      }
+    }
+  }
+}
+
+// Home state override tooltip
+// recover user
+.homeStateTooltip {
+  &:hover {
+    .homeStateTooltipContent {
+      display: block;
+    }
+  }
+  .homeStateTooltipContent {
+    @include tooltipContent;
+    @include lg-screen {
+      transform: translateX(0);
+      margin-top: 16px !important;
+      &::before {
+        display: none;
+      }
+    }
+    z-index: 20;
+    right: 0 !important;
+    left: unset !important;
+    transform: translateX(-50%);
+    margin-top: 0 !important;
+    &::before {
+      content: "";
+      right: unset;
+      left: -8px;
+      box-shadow: 0 -8px 10px -6px #000000 !important;
+      box-shadow: -8px 0 10px -6px #000000 !important;
+    }
+  }
+}
+
+// custom Tooltips end

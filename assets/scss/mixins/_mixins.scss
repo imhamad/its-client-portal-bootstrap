@@ -1,0 +1,92 @@
+// Media Queries
+@mixin super-xxl() {
+  @media screen and (min-width: $super-xxl) {
+    @content;
+  }
+}
+@mixin xxl-screen() {
+  @media only screen and (max-width: $xxl-screen) {
+    @content;
+  }
+}
+@mixin xl-screen() {
+  @media only screen and (max-width: $xl-screen) {
+    @content;
+  }
+}
+@mixin lg-screen() {
+  @media only screen and (max-width: $lg-screen) {
+    @content;
+  }
+}
+@mixin md-screen() {
+  @media only screen and (max-width: $md-screen) {
+    @content;
+  }
+}
+@mixin sm-screen() {
+  @media only screen and (max-width: $sm-screen) {
+    @content;
+  }
+}
+@mixin xs-screen() {
+  @media only screen and (max-width: $xs-screen) {
+    @content;
+  }
+}
+
+// tooltip
+@mixin tooltipContent {
+  margin-top: 16px;
+  @include lg-screen() {
+    top: 100%;
+    left: unset;
+    &::before {
+      content: "";
+      right: unset;
+      top: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 !important  ;
+      box-shadow: 0 -8px 10px -6px #000000 !important;
+      box-shadow: -8px 0 10px -6px #000000 !important;
+      transition: all .5s ease-in-out;
+
+    }
+  }
+  position: absolute;
+  left: -330px;
+  width: 300px;
+  max-width: 100%;
+  top: 0;
+  padding: 10px 30px 10px 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  display: none;
+  text-align: left;
+  border-radius: 10px;
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    position: absolute;
+    transform: rotate(45deg);
+    right: -8px;
+    box-shadow: 4px -5px 12px -6px #000000;
+  }
+  span {
+    color: $text-color;
+    font-size: 15px;
+    font-weight: $bold;
+    color: black;
+  }
+  ul {
+    margin-top: 10px;
+    li {
+      line-height: 23px;
+      font-size: 14px;
+      color: black;
+    }
+  }
+}

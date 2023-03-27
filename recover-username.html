@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--    Viewport compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--  Prevent Zooming out on Mobile Devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--    Bootstrap with CDN for fast loading -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!--  Compiled CSS | Source Code to be done in SCSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--    Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>TrakPay | Recover Username</title>
+
+    <!--    Nice Fade in effect-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="w-100 d-block d-lg-flex flex-row justify-content-start">
+        <div class="imageWrapper">
+          <img
+            src="assets/images/login.svg"
+            alt=""
+            class="w-100 h-100 webImage"
+          />
+          <img
+            src="assets/images/login-mobile.svg"
+            alt=""
+            class="w-100 h-100 mobileImage"
+          />
+        </div>
+        <div
+          class="d-flex flex-column justify-content-between formContentContainer"
+        >
+          <div class="contentWrapper">
+            <a href="index.html"><img src="assets/images/logo.svg" alt="" class="logo"/></a>
+            <h6>Recover your username</h6>
+            <form class="mt-4">
+              <div class="w-100 mb-3 position-relative feinTooltip">
+                <input
+                  type="text"
+                  class="w-100 position-static"
+                  placeholder="FEIN"
+                />
+                <div class="feinTooltipContent">
+                  <span>FEIN Rules</span>
+                  <ul>
+                    <li>Must be 9 numbers.</li>
+                    <li>Must have a dash after 2nd number.</li>
+                    <li>Cannot have any spaces.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="w-100 mb-3 position-relative emailTooltip">
+                <input
+                  type="text"
+                  class="w-100 position-static"
+                  placeholder="Email"
+                  style="z-index: 10"
+                />
+                <div class="emailTooltipContent">
+                  <span>Email Rules</span>
+                  <ul>
+                    <li>Cannot have any spaces.</li>
+                    <li>
+                      Recipient name can only have maximum of 64 characters.
+                    </li>
+                    <li>
+                      Recipient name cannot start with a special character.
+                    </li>
+                    <li>Recipient name cannot end with a special character.</li>
+                    <li>Recipient name must have all printable characters.</li>
+                    <li>
+                      Recipient name cannot have two special characters
+                      together.
+                    </li>
+                    <li>
+                      Domains must have an inner domain and a main domain,
+                      separated by a dot.
+                    </li>
+                    <li>
+                      Inner domains can only have a maximum of 253 characters.
+                    </li>
+                    <li>
+                      Inner domains can only have a dash or dot for special
+                      characters.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button class="w-100 mb-4 submit_button">Recover</button>
+              <div class="mt-3">
+                <span href="#" class="sign_up_link"
+                >Facing any problem?
+                  <a href="mailto:info@trakpay.com?subject=Facing an issue while recovering my Username!&body=Please explain your issue here so we can help you out!" style="color: #6292d9"> Submit a Request</a>
+                </span>
+              </div>
+            </form>
+          </div>
+          <div
+            class="w-100 d-flex flex-column align-items-center bottomContent"
+          >
+            <div class="d-flex gap-2 mb-3">
+              <img src="assets/images/mail.svg" />
+              <span class="primary_text">info@trakpay.com</span>
+            </div>
+            <div class="d-flex gap-2 mb-3">
+              <img src="assets/images/phone.svg" />
+              <span class="primary_text">+1-305-537-6136</span>
+            </div>
+            <p>Copyright 2023 All rights reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

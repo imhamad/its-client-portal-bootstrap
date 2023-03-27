@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 1.5s ease-out;
+}
+
+body {
+  background-color: white;
+  font-style: normal !important;
+}
+
+// --------- Custom select -------------
+.custom_select {
+  .input {
+    cursor: pointer;
+  }
+  .select_list {
+    background-color: $lightGray-bg;
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 15px;
+    transition: all 100ms ease-in-out;
+    z-index: 99;
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      text-align: left;
+      cursor: pointer;
+    }
+  }
+  .multiSelect_input {
+    .selectedItem {
+      background-color: #efefef;
+      padding: 6px 12px;
+      border-radius: 15px;
+      color: #4f4141;
+      span {
+        font-size: 13px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+// --------- Custom select end -------------
+
+// ------- Bootstrap Checkbox customization---------
+.checkbox {
+  input {
+    width: 17px;
+    height: 17px;
+    border: 2px solid $primary;
+    border-radius: 0;
+    &:checked {
+      background-color: $primary;
+    }
+  }
+  label {
+    color: #393939;
+    font-size: 15px;
+    margin-top: 1px;
+  }
+}
+// ------------ End --------------
+
+// Custom checkbox start
+.styled-checkbox {
+  position: absolute;
+  opacity: 0;
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + label:before {
+    @include sm-screen {
+      width: 14px;
+      height: 14px;
+      margin-top: 1px;
+    }
+    content: "";
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 19px;
+    height: 19px;
+    // background: #e5e5e5;
+    border: 2px solid $primary;
+  }
+
+  // Box checked
+  &:checked + label:before {
+    background: $primary;
+    border: 1px solid $primary;
+  }
+
+  // Disabled state label.
+  &:disabled + label {
+    color: #b8b8b8;
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + label:before {
+    box-shadow: none;
+    background: #ddd;
+  }
+
+  // Checkmark. Could be replaced with an image
+  &:checked + label:after {
+    @include sm-screen {
+      content: url("/assets/images/correct.svg");
+      left: 2px;
+      top: -1px;
+    }
+    content: url("/assets/images/correct-mobile.svg");
+    position: absolute;
+    left: 3px;
+    top: 0px;
+    background: transparent;
+  }
+}
+// Custom checkbox end
+
+// Scroll bar styles
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffdeb4;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c46f00;
+}
+
+// checkbox
+.form-check input {
+  background-color: transparent;
+  border: 1px solid #e98505;
+  box-shadow: none !important;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+}
+.form-check input:checked {
+  background-color: #c46f00;
+  border: 1px solid #e98505;
+  box-shadow: none;
+}
+.form-check input:focus {
+  border: 1px solid #e98505;
+}
+
+// React Select styling customization
+.select_wrapper {
+  .css-1s2u09g-control {
+    background-color: transparent !important;
+    border-width: 0px !important;
+    border-color: transparent !important;
+    border-style: none !important;
+    height: 100% !important;
+    padding: 0 5px !important;
+  }
+
+  .css-1pahdxg-control {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    border-width: 0px !important;
+    border-color: transparent !important;
+    border-style: none !important;
+    height: 100% !important;
+    padding: 0 5px !important;
+
+    &:hover {
+      border: none !important;
+      border-color: transparent !important;
+    }
+  }
+
+  .css-b62m3t-container {
+    height: 100% !important;
+  }
+
+  .css-26l3qy-menu {
+    border-radius: 0px !important;
+
+    .css-1n7v3ny-option {
+      background-color: transparent;
+    }
+
+    .css-9gakcf-option {
+      background-color: #085a8d !important;
+      color: #fff;
+    }
+  }
+}
+
+// Animation for slider icon
+@keyframes movementAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.sliderIcon {
+  animation: movementAnimation 5s infinite;
+}

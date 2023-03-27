@@ -1,0 +1,141 @@
+.empolyees_wrapper {
+  width: 100%;
+  .title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #949494;
+  }
+  .employees_topbar {
+    .searchWrapper {
+      width: 246px;
+      height: 35px;
+      padding: 0 0px;
+      border-radius: 5px;
+      border: 1px solid lightgray;
+      input {
+        font-size: 12px;
+        &:focus {
+          border: none;
+          outline: none;
+        }
+        &::placeholder {
+          color: #bbbbbb;
+        }
+      }
+    }
+    .filterWrapper {
+      font-size: 12px;
+      select {
+        background-color: $lightGray-bg;
+        border-radius: 5px;
+        border: none;
+        padding: 4px 5px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  .employees_table {
+    thead tr th {
+      font-weight: 300;
+      font-size: 12px;
+    }
+    tbody tr td {
+      font-weight: 400;
+      font-size: 12px;
+    }
+  }
+  .pagination {
+    flex: 1;
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: 14px;
+    }
+  }
+}
+
+// Details page
+.empolyees_details {
+  .title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #949494;
+  }
+  .empolyee_card {
+    @include sm-screen {
+      width: 100% !important;
+      padding: 15px 15px;
+    }
+    width: 517px;
+    max-width: 100%;
+    border-radius: 8px;
+    background: #f7f7f7;
+    box-shadow: 0px 12px 22px rgba(0, 0, 0, 0.2);
+    padding: 25px 25px;
+    .rowWrapper {
+      p {
+        font-size: 16px;
+        font-weight: 600;
+        text-align: left;
+        color: #2b2b2b;
+        &:first-child {
+          @include sm-screen {
+            width: 100% !important;
+          }
+          font-weight: 300;
+          width: 50%;
+        }
+      }
+    }
+  }
+  .button_wrapper {
+    max-width: 517px;
+    button {
+      height: 41px;
+      width: 109px;
+      border-radius: 5px;
+      background-color: #7bb0ff;
+    }
+  }
+}
+
+// Add Employee page Styling...
+.add_employee {
+  .title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #949494;
+    margin-bottom: 50px;
+  }
+  form {
+    max-width: 645px;
+
+    .checkbox {
+      @include checkbox;
+    }
+    .buttonsWrapper {
+      button {
+        @include sm-screen {
+          flex: none;
+          width: 120px;
+        }
+        height: 50px;
+        border-radius: 5px;
+        flex: 1;
+        border: none;
+        font-size: 14px;
+        color: white;
+        background-color: #89d087;
+        &:first-child {
+          background-color: #7bb0ff;
+        }
+
+        &:last-child {
+          background-color: #e78200;
+        }
+      }
+    }
+  }
+}
