@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--    Viewport compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--  Prevent Zooming out on Mobile Devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--    Bootstrap with CDN for fast loading -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!--  Compiled CSS | Source Code to be done in SCSS -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!--    Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>TrakPay | No Pending Payroll Errors</title>
+
+    <!-- Nice Fade in affect -->
+  </head>
+  <body>
+    <section class="dashboard_layout_wrapper d-flex flex-row">
+      <!-- Sidebar -->
+      <aside class="layout_sidebar" style="width: 300px" id="sidebar-menu">
+        <div class="menu_close d-flex justify-content-end">
+          <button type="button" onclick="toggleMenu()">
+            <img
+              src="../assets/images/layout/Vector.svg"
+              alt=""
+              class="d-none d-lg-block"
+            />
+          </button>
+          <button type="button" onclick="closeMenu()">
+            <img
+              src="../assets/images/layout/Vector.svg"
+              alt=""
+              class="d-lg-none d-block"
+            />
+          </button>
+        </div>
+        <div class="sidebar_list">
+          <div class="list_item">
+            <a href="../dashboard/index.html" class="d-flex gap-3">
+              <!-- <img src={item?.activeIcon} /> -->
+              <img src="../assets/images/layout/dashboard.svg" />
+              <span id="list-text">Dashboard</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="index.html" class="d-flex gap-3">
+              <img src="../assets/images/layout/policy-active.svg" />
+              <span class="list-text active">Policy & Payroll</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="#" class="d-flex gap-3">
+              <img src="../assets/images/layout/employee.svg" />
+              <span class="">Employee Roster</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="#" class="d-flex gap-3">
+              <img src="../assets/images/layout/upload-payroll.svg" />
+              <span class="">Upload Payroll</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="#" class="d-flex gap-3">
+              <img src="../assets/images/layout/billing.svg" />
+              <span class="">Billing Information</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="#" class="d-flex gap-3">
+              <img src="../assets/images/layout/contacts.svg" />
+              <span class="">Contacts</span>
+            </a>
+          </div>
+          <div class="list_item">
+            <a href="#" class="d-flex gap-3">
+              <img src="../assets/images/layout/email-notification.svg" />
+              <span class="">Email Notification</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="layout_inside_content pe-5">
+        <!-- Header -->
+        <header class="d-flex flex-wrap justify-content-between header">
+          <div class="d-flex gap-3 align-items-center">
+            <button
+              class="border-0 bg-transparent d-lg-none d-block"
+              type="button"
+              onclick="openMenu()"
+            >
+              BAR
+            </button>
+            <img
+              src="../assets/images/logo.svg"
+              class="logo"
+              style="width: 224px; height: 64px"
+            />
+          </div>
+          <div class="d-flex align-items-center gap-4">
+            <div class="notifi_menu">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle bg-transparent border-0"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <div
+                    class="notif_wrapper position-relative d-flex align-items-center"
+                  >
+                    <img
+                      src="../assets/images/layout/notification.svg"
+                      alt="Notification"
+                      class="notification"
+                    />
+                    <div class="notification_circle"></div>
+                  </div>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >You have no payroll errors</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="header_profile">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle bg-transparent border-0"
+                  type="button"
+                  id="dropdownMenuButton2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="../assets/images/layout/profile.png"
+                    alt="Profile"
+                    class="profile_image"
+                  />
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="#">Log Out</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!------ Main Content ------>
+        <main class="dashboard_content_wrapper">
+          <section class="error_fixing_enhance pb-5">
+            <h1>Error Fixing Enhance / tbd / 95-3688555 / 987654</h1>
+            <div class="tabs_container">
+              <!-- tabs buttons -->
+              <ul class="nav nav-pills my-3 tabs_buttons">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    data-bs-toggle="pill"
+                    href="#rating"
+                    >Rating</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="pill" href="#payroll"
+                    >Payroll</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    href="#processingFees"
+                    >Processing Fees</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    href="#billingInformation"
+                    >Billing Information</a
+                  >
+                </li>
+              </ul>
+              <!-- Tabs content -->
+              <div class="tab-content">
+                <!-- Rating tab content  -->
+                <div class="tab-pane active rating_tab_content" id="rating">
+                  <h1>
+                    The class code rating information is managed directly
+                    through Hartford so please login to Harford's website to
+                    view this information.
+                  </h1>
+                </div>
+                <!-- Payroll tab content -->
+                <div class="tab-pane fade" id="payroll">
+                  <div class="payroll_tab_content">
+                    <!-- Table -->
+                    <div
+                      class="w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon"
+                    >
+                      <img
+                        src="../assets/images/slider.png"
+                        alt="Slider"
+                        style="width: 25px"
+                      />
+                    </div>
+                    <div class="my-4 table_wrapper">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th style="width: auto">All</th>
+                            <th>Carrier</th>
+                            <th>Processed</th>
+                            <th>Cycle</th>
+                            <th>Employees</th>
+                            <th>Begin Date</th>
+                            <th>End Date</th>
+                            <th>Check Date</th>
+                            <th class="px-1">Actual Payroll</th>
+                            <th class="px-1">Exempt Payroll</th>
+                            <th class="px-1">Subject Payroll</th>
+                            <th class="ps-4">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td style="width: auto; margin-bottom: 10px">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                              </div>
+                            </td>
+                            <td>Hartford-API</td>
+                            <td>07/04/2022</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>05/07/2021</td>
+                            <td>05/13/2021</td>
+                            <td>07/04/2022</td>
+                            <td>$53,000.00</td>
+                            <td class="px-1">$700.00</td>
+                            <td class="px-1">$51,000.00</td>
+                            <td class="ps-4">
+                              <div class="d-flex gap-2 align-items-center">
+                                <img
+                                  src="../assets/images/payroll/eye.svg"
+                                  alt="Eye"
+                                />
+                                <img
+                                  src="../assets/images/payroll/download.svg"
+                                  alt="Download"
+                                />
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="width: auto; margin-bottom: 10px">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                              </div>
+                            </td>
+                            <td>Hartford-API</td>
+                            <td>07/04/2022</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>05/07/2021</td>
+                            <td>05/13/2021</td>
+                            <td>07/04/2022</td>
+                            <td>$53,000.00</td>
+                            <td class="px-1">$700.00</td>
+                            <td class="px-1">$51,000.00</td>
+                            <td class="ps-4">
+                              <div class="d-flex gap-2 align-items-center">
+                                <img
+                                  src="../assets/images/payroll/eye.svg"
+                                  alt="Eye"
+                                />
+                                <img
+                                  src="../assets/images/payroll/download.svg"
+                                  alt="Download"
+                                />
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="width: auto; margin-bottom: 10px">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                              </div>
+                            </td>
+                            <td>Hartford-API</td>
+                            <td>07/04/2022</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>05/07/2021</td>
+                            <td>05/13/2021</td>
+                            <td>07/04/2022</td>
+                            <td>$53,000.00</td>
+                            <td class="px-1">$700.00</td>
+                            <td class="px-1">$51,000.00</td>
+                            <td class="ps-4">
+                              <div class="d-flex gap-2 align-items-center">
+                                <img
+                                  src="../assets/images/payroll/eye.svg"
+                                  alt="Eye"
+                                />
+                                <img
+                                  src="../assets/images/payroll/download.svg"
+                                  alt="Download"
+                                />
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="width: auto; margin-bottom: 10px">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault"
+                                />
+                              </div>
+                            </td>
+                            <td>Hartford-API</td>
+                            <td>07/04/2022</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>05/07/2021</td>
+                            <td>05/13/2021</td>
+                            <td>07/04/2022</td>
+                            <td>$53,000.00</td>
+                            <td class="px-1">$700.00</td>
+                            <td class="px-1">$51,000.00</td>
+                            <td class="ps-4">
+                              <div class="d-flex gap-2 align-items-center">
+                                <img
+                                  src="../assets/images/payroll/eye.svg"
+                                  alt="Eye"
+                                />
+                                <img
+                                  src="../assets/images/payroll/download.svg"
+                                  alt="Download"
+                                />
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!--  end  -->
+                    <button
+                      class="download_button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#payrollModal"
+                    >
+                      Download Selected
+                    </button>
+                  </div>
+                </div>
+                <!-- Processing fees tab content -->
+                <div class="tab-pane fade processing_fees" id="processingFees">
+                  <div
+                    class="w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon"
+                  >
+                    <img
+                      src="../assets/images/slider.png"
+                      alt="Slider"
+                      style="width: 25px"
+                    />
+                  </div>
+                  <div class="mt-3">
+                    <div class="table_wrapper">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Company</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Created Date</th>
+                            <th style="width: 150px">Updated Date</th>
+                            <th style="width: 150px">Charged Date</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Error Fixing Enhance</td>
+                            <td>payroll</td>
+                            <td>hold</td>
+                            <td style="width: 150px">09/30/2022 13:51</td>
+                            <td style="width: 150px">09/30/2022 13:51</td>
+                            <td style="width: 150px"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!--  Payroll Charge table  -->
+                  <div class="mt-4">
+                    <h6 style="color: #e78200">Payroll Charge</h6>
+                    <SliderIcon />
+                    <div class="mb-3 table_wrapper">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Status</th>
+                            <th style="width: 200px">Premium</th>
+                            <th>Per Payroll Fee</th>
+                            <th>Charged Amount</th>
+                            <th>Transaction_id</th>
+                            <th>Date</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>hold</td>
+                            <td style="width: 200px" class="pe-3">
+                              Premium is debited directly by your insurance
+                              carrier
+                            </td>
+                            <td>0</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!--  Transaction History table  -->
+                  <div class="mt-4">
+                    <h6 style="color: #e78200">Transaction History</h6>
+                    <SliderIcon />
+                    <div class="mb-3 table_wrapper">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Status</th>
+                            <th>Description</th>
+                            <th>Updated Date</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>hold</td>
+                            <td>Payroll fee charge on hold</td>
+                            <td>09/30/2022 13:51:31</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-3">
+                    <a href="error_fixing_enhance.html">
+                      <button class="export_button">Back</button>
+                    </a>
+                    <button
+                      class="export_button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#payrollModal"
+                    >
+                      Download PDF
+                    </button>
+                  </div>
+                </div>
+                <!-- Billing information tab content -->
+                <div class="tab-pane fade" id="billingInformation">
+                  <section class="billing_information">
+                    <div
+                      class="w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon"
+                    >
+                      <img
+                        src="../assets/images/slider.png"
+                        alt="Slider"
+                        style="width: 25px"
+                      />
+                    </div>
+                    <div class="my-4 table_wrapper">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th style="width: auto">Name On Account</th>
+                            <th>Routing Number</th>
+                            <th>Account Number</th>
+                            <th>Account Holder Type</th>
+                            <th>Account Type</th>
+                            <th>Update</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td style="width: auto">tester</td>
+                            <td>*****3103</td>
+                            <td>*2345</td>
+                            <td>business</td>
+                            <td>checking</td>
+                            <td>
+                              <div class="refresh_container" role="button">
+                                <a href="update_billing.html">
+                                  <img
+                                    src="../assets/images/payroll/refresh.svg"
+                                    alt=""
+                                  />
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <table class="mt-4" style="border: 1px solid lightgray">
+                        <thead>
+                          <tr>
+                            <th style="width: auto">First Name</th>
+                            <th>Last Name</th>
+                            <th>Company</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="py-3" style="width: auto">Anne</td>
+                            <td class="py-3">Hathaway</td>
+                            <td class="py-3">Tester123</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div
+        class="d-flex flex-column flex-sm-row flex-wrap justify-content-between footer_row"
+      >
+        <img src="../assets/images/layout//logo-white.svg" alt="" />
+        <div class="d-flex gap-2 align-items-center mb-3 footer_col">
+          <img
+            src="../assets/images/layout/mail-white.svg"
+            style="width: 17px; height: 13px"
+          />
+          <span class="">info@trakpay.com</span>
+        </div>
+        <div class="d-flex gap-2 align-items-center mb-3 footer_col">
+          <img
+            src="../assets/images/layout/phone-white.svg"
+            style="width: '14px'; height: 14px"
+          />
+          <span>+1-305-537-6136</span>
+        </div>
+      </div>
+      <p class="text-center copyright_text">
+        Copyright 2023 All rights reserved
+      </p>
+    </footer>
+
+    <!-- Payroll Modal -->
+    <section class="payroll_modal">
+      <div
+        class="modal fade"
+        id="payrollModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <section class="payroll_modal_content">
+              <div class="d-flex justify-content-between align-items-center">
+                <h6 class="title">Payroll</h6>
+                <button class="border-0 bg-transparent" type="button">
+                  <img src="/images/payroll/cross.svg" alt="" class="me-2" />
+                </button>
+              </div>
+              <div style="max-width: 90vw">
+                <div
+                  class="w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon"
+                >
+                  <img
+                    src="/images/slider.png"
+                    alt="Slider"
+                    style="width: 25px"
+                  />
+                </div>
+              </div>
+              <div class="table_wrapper">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Primary User Company Name</th>
+                      <th>Named Insured</th>
+                      <th>FEIN</th>
+                      <th>Client Number</th>
+                      <th>Carrier</th>
+                      <th>Policy</th>
+                      <th>Effective date</th>
+                      <th>Expire date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Error Fixing Enhance</td>
+                      <td></td>
+                      <td>95-3688555</td>
+                      <td>11111</td>
+                      <td>The Hartford</td>
+                      <td>tbd</td>
+                      <td>2022-09-01</td>
+                      <td>2023-09-01</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <!--  Table  -->
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Processed</th>
+                      <th>Cycle</th>
+                      <th>Employees</th>
+                      <th>Begin Date</th>
+                      <th>End Date</th>
+                      <th>Check Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>07/05/2022</td>
+                      <td></td>
+                      <td>2</td>
+                      <td>05/07/2021</td>
+                      <td>05/13/2021</td>
+                      <td>07/05/2022</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!--  Payroll Employees table -->
+              <div class="modal_table mt-3">
+                <h6>Payroll Employees</h6>
+                <div style="max-width: 90vw">
+                  <div
+                    class="w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon"
+                  >
+                    <img
+                      src="/images/slider.png"
+                      alt="Slider"
+                      style="width: 25px"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3 table_wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="ps-3 pe-1" style="width: auto">Name</th>
+                        <th class="px-1" style="width: 150px">Class Code</th>
+                        <th class="px-1">Payroll</th>
+                        <th class="px-1">Overtime Wages</th>
+                        <th class="px-2">Other Exempt Wages</th>
+                        <th class="px-1">Tips</th>
+                        <th class="px-1">Hours</th>
+                        <th class="px-1">Total Exempt Wages</th>
+                        <th class="px-1">Subject</th>
+                        <th class="px-1">Gender</th>
+                        <th class="px-1">Included Excluded</th>
+                        <th class="ps-2">Employee Owner/Officer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td
+                          class="ps-3 pe-1"
+                          style="width: auto; margin-bottom: 10px"
+                        >
+                          Thicke, Alan
+                        </td>
+                        <td class="px-1" style="width: 150px">
+                          NY 1111 HAPI code for all pass only use this code
+                        </td>
+                        <td class="px-1">$2,000.00</td>
+                        <td class="px-1">$350.00</td>
+                        <td class="px-2">$350.00</td>
+                        <td class="px-1">$300.00</td>
+                        <td class="px-1">40</td>
+                        <td class="px-1">($1,000.00)</td>
+                        <td class="px-1">$1,000.00</td>
+                        <td class="px-1">Male</td>
+                        <td class="px-1">Included</td>
+                        <td class="ps-2">Employee</td>
+                      </tr>
+                      <tr>
+                        <td
+                          class="ps-3 pe-1"
+                          style="width: auto; margin-bottom: 10px"
+                        >
+                          Thicke, Alan
+                        </td>
+                        <td class="px-1" style="width: 150px">
+                          NY 1111 HAPI code for all pass only use this code
+                        </td>
+                        <td class="px-1">$2,000.00</td>
+                        <td class="px-1">$350.00</td>
+                        <td class="px-2">$350.00</td>
+                        <td class="px-1">$300.00</td>
+                        <td class="px-1">40</td>
+                        <td class="px-1">($1,000.00)</td>
+                        <td class="px-1">$1,000.00</td>
+                        <td class="px-1">Male</td>
+                        <td class="px-1">Included</td>
+                        <td class="ps-2">Employee</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!--  Pending Errors talbe  -->
+              <div class="modal_table">
+                <h6>Pending Errors</h6>
+                <div style="max-width: 90vw">
+                  <div
+                    class="w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon"
+                  >
+                    <img
+                      src="/images/slider.png"
+                      alt="Slider"
+                      style="width: 25px"
+                    />
+                  </div>
+                </div>
+                <div class="mb-3 table_wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="ps-3 pe-1" style="width: auto">Name</th>
+                        <th class="px-1" style="width: 150px">Class Code</th>
+                        <th class="px-1">Payroll</th>
+                        <th class="px-1">Overtime Wages</th>
+                        <th class="px-2">Other Exempt Wages</th>
+                        <th class="px-1">Tips</th>
+                        <th class="px-1">Hours</th>
+                        <th class="px-1">Total Exempt Wages</th>
+                        <th class="px-1">Subject</th>
+                        <th class="px-1">Gender</th>
+                        <th class="px-1">Included Excluded</th>
+                        <th class="ps-2">Employee Owner/Officer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td
+                          class="ps-3 pe-1"
+                          style="width: auto; margin-bottom: 10px"
+                        >
+                          Thicke, Alan
+                        </td>
+                        <td class="px-1" style="width: 150px">
+                          NY 1111 HAPI code for all pass only use this code
+                        </td>
+                        <td class="px-1">$2,000.00</td>
+                        <td class="px-1">$350.00</td>
+                        <td class="px-2">$350.00</td>
+                        <td class="px-1">$300.00</td>
+                        <td class="px-1">40</td>
+                        <td class="px-1">($1,000.00)</td>
+                        <td class="px-1">$1,000.00</td>
+                        <td class="px-1">Male</td>
+                        <td class="px-1">Included</td>
+                        <td class="ps-2">Employee</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!--  Fixed Errors table  -->
+              <div class="modal_table">
+                <h6>Fixed Errors</h6>
+                <div style="max-width: 90vw">
+                  <SliderIcon />
+                </div>
+                <div class="mb-2 table_wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="ps-3 pe-1" style="width: auto">Name</th>
+                        <th class="px-1" style="width: 150px">Class Code</th>
+                        <th class="px-1">Payroll</th>
+                        <th class="px-1">Overtime Wages</th>
+                        <th class="px-2">Other Exempt Wages</th>
+                        <th class="px-1">Tips</th>
+                        <th class="px-1">Hours</th>
+                        <th class="px-1">Total Exempt Wages</th>
+                        <th class="px-1">Subject</th>
+                        <th class="px-1">Gender</th>
+                        <th class="px-1">Included Excluded</th>
+                        <th class="ps-2">Employee Owner/Officer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td
+                          class="ps-3 pe-1"
+                          style="width: 'auto'; margin-bottom: 10px"
+                        >
+                          Thicke, Alan
+                        </td>
+                        <td class="px-1" style="width: 150px">
+                          NY 1111 HAPI code for all pass only use this code
+                        </td>
+                        <td class="px-1">$2,000.00</td>
+                        <td class="px-1">$350.00</td>
+                        <td class="px-2">$350.00</td>
+                        <td class="px-1">$300.00</td>
+                        <td class="px-1">40</td>
+                        <td class="px-1">($1,000.00)</td>
+                        <td class="px-1">$1,000.00</td>
+                        <td class="px-1">Male</td>
+                        <td class="px-1">Included</td>
+                        <td class="ps-2">Employee</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!--  Endorsement Requests table  -->
+              <div class="modal_table">
+                <h6>Endorsement Requests</h6>
+                <div style="max-width: 90vw">
+                  <div
+                    class="w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon"
+                  >
+                    <img
+                      src="/images/slider.png"
+                      alt="Slider"
+                      style="width: 25px"
+                    />
+                  </div>
+                </div>
+                <div class="mb-2 table_wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="ps-3 pe-1" style="width: auto">Name</th>
+                        <th class="px-1" style="width: 150px">Class Code</th>
+                        <th class="px-1">Payroll</th>
+                        <th class="px-1">Overtime Wages</th>
+                        <th class="px-2">Other Exempt Wages</th>
+                        <th class="px-1">Tips</th>
+                        <th class="px-1">Hours</th>
+                        <th class="px-1">Total Exempt Wages</th>
+                        <th class="px-1">Subject</th>
+                        <th class="px-1">Gender</th>
+                        <th class="px-1">Included Excluded</th>
+                        <th class="ps-2">Employee Owner/Officer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td
+                          class="ps-3 pe-1"
+                          style="width: auto; margin-bottom: 10px"
+                        >
+                          Thicke, Alan
+                        </td>
+                        <td class="px-1" style="width: 150px">
+                          NY 1111 HAPI code for all pass only use this code
+                        </td>
+                        <td class="px-1">$2,000.00</td>
+                        <td class="px-1">$350.00</td>
+                        <td class="px-2">$350.00</td>
+                        <td class="px-1">$300.00</td>
+                        <td class="px-1">40</td>
+                        <td class="px-1">($1,000.00)</td>
+                        <td class="px-1">$1,000.00</td>
+                        <td class="px-1">Male</td>
+                        <td class="px-1">Included</td>
+                        <td class="ps-2">Employee</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!--  Late Payrolls table */} -->
+              <div class="modal_table">
+                <h6>Late Payroll</h6>
+                <div style="max-width: 90vw">
+                  <div
+                    class="w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon"
+                  >
+                    <img
+                      src="/images/slider.png"
+                      alt="Slider"
+                      style="width: 25px"
+                    />
+                  </div>
+                </div>
+                <div class="mb-2 table_wrapper">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="ps-3 pe-1" style="width: auto">Name</th>
+                        <th class="px-1" style="width: 150px">Class Code</th>
+                        <th class="px-1">Payroll</th>
+                        <th class="px-1">Overtime Wages</th>
+                        <th class="px-2">Other Exempt Wages</th>
+                        <th class="px-1">Tips</th>
+                        <th class="px-1">Hours</th>
+                        <th class="px-1">Total Exempt Wages</th>
+                        <th class="px-1">Subject</th>
+                        <th class="px-1">Gender</th>
+                        <th class="px-1">Included Excluded</th>
+                        <th class="ps-2">Employee Owner/Officer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td
+                          class="ps-3 pe-1"
+                          style="width: auto; margin-bottom: 10px"
+                        >
+                          Thicke, Alan
+                        </td>
+                        <td class="px-1" style="width: 150px">
+                          NY 1111 HAPI code for all pass only use this code
+                        </td>
+                        <td class="px-1">$2,000.00</td>
+                        <td class="px-1">$350.00</td>
+                        <td class="px-2">$350.00</td>
+                        <td class="px-1">$300.00</td>
+                        <td class="px-1">40</td>
+                        <td class="px-1">($1,000.00)</td>
+                        <td class="px-1">$1,000.00</td>
+                        <td class="px-1">Male</td>
+                        <td class="px-1">Included</td>
+                        <td class="ps-2">Employee</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Main JavaScript -->
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

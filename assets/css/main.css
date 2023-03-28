@@ -1100,8 +1100,9 @@ body {
     font-weight: 500;
     line-height: 16px;
     text-align: center;
-    color: #e88404;
     cursor: pointer; }
+    .policy_and_payroll .policy_card_wrapper .card_related_link a {
+      color: #e88404 !important; }
 
 .error_fixing_enhance h1 {
   font-family: Roboto;
@@ -1110,21 +1111,22 @@ body {
   text-align: left;
   color: #858585; }
 
-.error_fixing_enhance .tabs_container .tabs_buttons button {
+.error_fixing_enhance .tabs_container .tabs_buttons li {
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   color: #433636;
   border: none;
-  padding: 7px 18px;
+  padding: 7px 0px;
   background-color: transparent;
-  margin-right: 15px; }
+  margin-right: 20px; }
+  .error_fixing_enhance .tabs_container .tabs_buttons li a {
+    text-decoration: none;
+    color: #433636; }
 
-.error_fixing_enhance .tabs_container .tabs_buttons .active_tab {
+.error_fixing_enhance .tabs_container .tabs_buttons .active {
   transition: all 100ms ease-in-out;
-  font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
   background-color: #e78200;
-  padding: 7px 18px;
   border: none;
   border-radius: 5px;
   color: white; }
@@ -1164,19 +1166,21 @@ body {
 .processing_fees .processing_inner_tabs {
   background-color: #f3f3f3;
   padding: 5px;
-  width: 180px;
+  width: 200px;
   height: 40px;
   border-radius: 5px;
   cursor: pointer; }
-  .processing_fees .processing_inner_tabs button {
+  .processing_fees .processing_inner_tabs li {
     font-size: 10px;
     color: black;
     border: none;
     width: 50%;
-    padding: 0 7px; }
+    text-align: center; }
+    .processing_fees .processing_inner_tabs li a {
+      color: black;
+      text-decoration: none; }
   .processing_fees .processing_inner_tabs .active {
     background-color: #7bb0ff;
-    padding: 5px 0;
     color: white;
     border-radius: 5px; }
 
