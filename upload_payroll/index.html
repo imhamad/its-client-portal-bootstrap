@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" />
     <!--    Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <title>TrakPay | No Pending Payroll Errors</title>
+    <title>TrakPay | Employee Roster</title>
 
     <!-- Nice Fade in affect -->
   </head>
@@ -45,10 +45,10 @@
         </div>
         <div class="sidebar_list">
           <div class="list_item">
-            <a href="index.html" class="d-flex gap-3">
+            <a href="../dashboard/index.html" class="d-flex gap-3">
               <!-- <img src={item?.activeIcon} /> -->
-              <img src="../assets/images/layout/dashboard-active.svg" />
-              <span class="active" id="list-text">Dashboard</span>
+              <img src="../assets/images/layout/dashboard.svg" />
+              <span id="list-text">Dashboard</span>
             </a>
           </div>
           <div class="list_item">
@@ -64,9 +64,9 @@
             </a>
           </div>
           <div class="list_item">
-            <a href="../upload_payroll/index.html" class="d-flex gap-3">
-              <img src="../assets/images/layout/upload-payroll.svg" />
-              <span class="">Upload Payroll</span>
+            <a href="index.html" class="d-flex gap-3">
+              <img src="../assets/images/layout/upload-active.svg" />
+              <span class="active">Upload Payroll</span>
             </a>
           </div>
           <div class="list_item">
@@ -163,93 +163,21 @@
 
         <!------ Main Content ------>
         <main class="dashboard_content_wrapper">
-          <section class="px-4">
-            <div class="row gap-3">
-              <a
-                href="error_fixing.html"
-                class="payroll_error_card error_card px-4 d-flex flex-wrap flex-lg-nowrap justify-content-start gap-3 py-2"
-                style="cursor: pointer; text-decoration: none"
-              >
-                <img src="../assets/images/dashboard/error.svg" alt="" />
-                <p>
-                  You have 1 pending employee payroll errors that must be
-                  corrected before payroll can be processed. Please click here
-                  to fix pending errors.
-                </p>
-              </a>
+          <section class="upload_payroll_section px-3">
+            <h1>Upload</h1>
+            <label class="upload_payroll">
+              <input type="file" class="d-none" />
               <div
-                class="payroll_error_card px-4 d-flex flex-wrap flex-lg-nowrap justify-content-start gap-3 py-2"
-                style="cursor: pointer"
+                class="d-flex flex-column gap-2 align-items-center justify-content-center h-100"
               >
-                <img src="../assets/images/dashboard/error.svg" alt="" />
-                <p>
-                  The processing of payments for your paygo WC service has been
-                  put on hold for 1 or more of your policies due to the bank
-                  account tied to the policy having a failed payment. Please
-                  provide TrakPay a bank letter per the instructions in the
-                  email you recently received. Once our bank processing unit
-                  approves the letter, we will restart your service.
-                  Alternatively, if you have a new bank account, please enter
-                  your new account number credentials here.
-                </p>
+                <img
+                  src="../assets/images/dashboard/upload1.svg"
+                  alt="Policy and Payroll Info"
+                />
+                <p class="card_text">Choose FIle</p>
               </div>
-            </div>
-          </section>
-
-          <!-- Frequentry used links -->
-          <section class="frequent_links px-3">
-            <h1>Frequently Used Links</h1>
-            <div class="row ms-1 d-flex frequent_card_row">
-              <div class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
-                  >
-                    <img
-                      src="../assets/images/dashboard/payroll-info.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Policy and Payroll Information</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    View policies and payroll information.
-                  </p>
-                </a>
-              </div>
-              <div class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
-                  >
-                    <img
-                      src="../assets/images/dashboard/employee-rost.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Employee Roster</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    View, add, and edit your employees.
-                  </p>
-                </a>
-              </div>
-              <label class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
-                  >
-                    <img
-                      src="../assets/images/dashboard/upload.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Upload Payroll</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    Upload and import excel .csv payroll files (ask us for a
-                    template if you do not already have one).
-                  </p>
-                </a>
-              </label>
-            </div>
+            </label>
+            <div class="py-5"></div>
           </section>
         </main>
       </div>

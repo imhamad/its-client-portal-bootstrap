@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" />
     <!--    Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <title>TrakPay | No Pending Payroll Errors</title>
+    <title>TrakPay | Employee Roster</title>
 
     <!-- Nice Fade in affect -->
   </head>
@@ -45,10 +45,10 @@
         </div>
         <div class="sidebar_list">
           <div class="list_item">
-            <a href="index.html" class="d-flex gap-3">
+            <a href="../dashboard/index.html" class="d-flex gap-3">
               <!-- <img src={item?.activeIcon} /> -->
-              <img src="../assets/images/layout/dashboard-active.svg" />
-              <span class="active" id="list-text">Dashboard</span>
+              <img src="../assets/images/layout/dashboard.svg" />
+              <span id="list-text">Dashboard</span>
             </a>
           </div>
           <div class="list_item">
@@ -58,9 +58,9 @@
             </a>
           </div>
           <div class="list_item">
-            <a href="../employee_roster/index.html" class="d-flex gap-3">
-              <img src="../assets/images/layout/employee.svg" />
-              <span class="">Employee Roster</span>
+            <a href="index.html" class="d-flex gap-3">
+              <img src="../assets/images/layout/employee-active.svg" />
+              <span class="active">Employee Roster</span>
             </a>
           </div>
           <div class="list_item">
@@ -163,92 +163,65 @@
 
         <!------ Main Content ------>
         <main class="dashboard_content_wrapper">
-          <section class="px-4">
-            <div class="row gap-3">
-              <a
-                href="error_fixing.html"
-                class="payroll_error_card error_card px-4 d-flex flex-wrap flex-lg-nowrap justify-content-start gap-3 py-2"
-                style="cursor: pointer; text-decoration: none"
-              >
-                <img src="../assets/images/dashboard/error.svg" alt="" />
-                <p>
-                  You have 1 pending employee payroll errors that must be
-                  corrected before payroll can be processed. Please click here
-                  to fix pending errors.
-                </p>
-              </a>
-              <div
-                class="payroll_error_card px-4 d-flex flex-wrap flex-lg-nowrap justify-content-start gap-3 py-2"
-                style="cursor: pointer"
-              >
-                <img src="../assets/images/dashboard/error.svg" alt="" />
-                <p>
-                  The processing of payments for your paygo WC service has been
-                  put on hold for 1 or more of your policies due to the bank
-                  account tied to the policy having a failed payment. Please
-                  provide TrakPay a bank letter per the instructions in the
-                  email you recently received. Once our bank processing unit
-                  approves the letter, we will restart your service.
-                  Alternatively, if you have a new bank account, please enter
-                  your new account number credentials here.
-                </p>
+          <section class="pb-5 empolyees_details">
+            <h1 class="title">Employees</h1>
+            <div class="mt-4 empolyee_card">
+              <div class="d-flex flex-wrap gap-3 rowWrapper">
+                <p class="">Employee No</p>
+                <p class="">10033</p>
+              </div>
+              <div class="d-flex flex-wrap gap-3 rowWrapper">
+                <p class="">First Name</p>
+                <p class="">Tom</p>
+              </div>
+              <div class="d-flex flex-wrap gap-3 rowWrapper">
+                <p class="">Last Name</p>
+                <p class="">Green</p>
+              </div>
+              <div class="d-flex flex-wrap gap-3 rowWrapper">
+                <p class="">Home State</p>
+                <p class="">NY</p>
+              </div>
+              <div class="d-flex flex-wrap gap-3 rowWrapper">
+                <p class="">Employer Owner/Officer</p>
+                <p class="">Employee</p>
+              </div>
+              <div class="d-flex flex-wrap gap-3 rowWrapper">
+                <p class="">Included/Excluded</p>
+                <p class="">Included</p>
+              </div>
+              <div class="d-flex flex-wrap gap-3 rowWrapper">
+                <p class="">Work State-Class Code Combo</p>
+                <p class="">NY - 8742 - OUTSIDE SALES</p>
+              </div>
+              <div class="position-relative passwordTooltip">
+                <div class="d-flex flex-wrap gap-3 rowWrapper">
+                  <p class="">Home State Override</p>
+                  <p class="">Yes</p>
+                </div>
+                <!-- Tooltip content -->
+                <div class="passwordTooltipContent" style="margin-top: -5px">
+                  <p>
+                    If the Home State Override is checked/enabled, then if
+                    employee's state on import matches the 'Home State' listed
+                    above, then this state will be 'overridden' and instead the
+                    state from the 'Work State-Class Code Combo' above will be
+                    used. And if the employee's state on the import is a
+                    different state from the Home State above, then the Home
+                    State Override will be unchecked/disabled, and employee will
+                    go thru normal import process.
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap gap-3 rowWrapper">
+                <p class="">Gender</p>
+                <p class="">Male</p>
               </div>
             </div>
-          </section>
-
-          <!-- Frequentry used links -->
-          <section class="frequent_links px-3">
-            <h1>Frequently Used Links</h1>
-            <div class="row ms-1 d-flex frequent_card_row">
-              <div class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
-                  >
-                    <img
-                      src="../assets/images/dashboard/payroll-info.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Policy and Payroll Information</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    View policies and payroll information.
-                  </p>
-                </a>
-              </div>
-              <div class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
-                  >
-                    <img
-                      src="../assets/images/dashboard/employee-rost.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Employee Roster</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    View, add, and edit your employees.
-                  </p>
-                </a>
-              </div>
-              <label class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
-                  >
-                    <img
-                      src="../assets/images/dashboard/upload.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Upload Payroll</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    Upload and import excel .csv payroll files (ask us for a
-                    template if you do not already have one).
-                  </p>
-                </a>
-              </label>
+            <div class="d-flex justify-content-end mt-4 pt-2 button_wrapper">
+              <a href="edit.html">
+                <button class="border-0 text-white">Edit</button>
+              </a>
             </div>
           </section>
         </main>
