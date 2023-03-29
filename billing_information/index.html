@@ -58,21 +58,21 @@
             </a>
           </div>
           <div class="list_item">
-            <a href="index.html" class="d-flex gap-3">
-              <img src="../assets/images/layout/employee-active.svg" />
-              <span class="active">Employee Roster</span>
+            <a href="../employee_roster/index.html" class="d-flex gap-3">
+              <img src="../assets/images/layout/employee.svg" />
+              <span class="">Employee Roster</span>
             </a>
           </div>
           <div class="list_item">
-            <a href="../upload_payroll/index.html" class="d-flex gap-3">
+            <a href="index.html" class="d-flex gap-3">
               <img src="../assets/images/layout/upload-payroll.svg" />
               <span class="">Upload Payroll</span>
             </a>
           </div>
           <div class="list_item">
-            <a href="../billing_information//index.html" class="d-flex gap-3">
-              <img src="../assets/images/layout/billing.svg" />
-              <span class="">Billing Information</span>
+            <a href="index.html" class="d-flex gap-3">
+              <img src="../assets/images/layout/billing-active.svg" />
+              <span class="active">Billing Information</span>
             </a>
           </div>
           <div class="list_item">
@@ -163,65 +163,75 @@
 
         <!------ Main Content ------>
         <main class="dashboard_content_wrapper">
-          <section class="pb-5 empolyees_details">
-            <h1 class="title">Employees</h1>
-            <div class="mt-4 empolyee_card">
-              <div class="d-flex flex-wrap gap-3 rowWrapper">
-                <p class="">Employee No</p>
-                <p class="">10033</p>
-              </div>
-              <div class="d-flex flex-wrap gap-3 rowWrapper">
-                <p class="">First Name</p>
-                <p class="">Tom</p>
-              </div>
-              <div class="d-flex flex-wrap gap-3 rowWrapper">
-                <p class="">Last Name</p>
-                <p class="">Green</p>
-              </div>
-              <div class="d-flex flex-wrap gap-3 rowWrapper">
-                <p class="">Home State</p>
-                <p class="">NY</p>
-              </div>
-              <div class="d-flex flex-wrap gap-3 rowWrapper">
-                <p class="">Employer Owner/Officer</p>
-                <p class="">Employee</p>
-              </div>
-              <div class="d-flex flex-wrap gap-3 rowWrapper">
-                <p class="">Included/Excluded</p>
-                <p class="">Included</p>
-              </div>
-              <div class="d-flex flex-wrap gap-3 rowWrapper">
-                <p class="">Work State-Class Code Combo</p>
-                <p class="">NY - 8742 - OUTSIDE SALES</p>
-              </div>
-              <div class="position-relative passwordTooltip">
-                <div class="d-flex flex-wrap gap-3 rowWrapper">
-                  <p class="">Home State Override</p>
-                  <p class="">Yes</p>
-                </div>
-                <!-- Tooltip content -->
-                <div class="passwordTooltipContent" style="margin-top: -5px">
-                  <p>
-                    If the Home State Override is checked/enabled, then if
-                    employee's state on import matches the 'Home State' listed
-                    above, then this state will be 'overridden' and instead the
-                    state from the 'Work State-Class Code Combo' above will be
-                    used. And if the employee's state on the import is a
-                    different state from the Home State above, then the Home
-                    State Override will be unchecked/disabled, and employee will
-                    go thru normal import process.
-                  </p>
-                </div>
-              </div>
-              <div class="d-flex flex-wrap gap-3 rowWrapper">
-                <p class="">Gender</p>
-                <p class="">Male</p>
-              </div>
+          <section class="pb-5 billing_information billing_content">
+            <h1 class="title">Billing Information</h1>
+            <p>
+              Please note that if you have multiple policies or FEINs with
+              payroll under this user login, the bank account info you set here
+              will be used for any processing fees for all
+              policies/FEINs/payrolls. However, you can set a separate bank
+              account up at the policy level by going into the policy in TrakPay
+              and setting it there. IF you do so, that will override the master
+              User setting which is established here.
+            </p>
+            <div
+              class="w-full d-lg-none d-flex justify-content-end mt-2 sliderIcon"
+            >
+              <img
+                src="../assets/images/slider.png"
+                alt="Slider"
+                style="width: 25px"
+              />
             </div>
-            <div class="d-flex justify-content-end mt-4 pt-2 button_wrapper">
-              <a href="edit.html">
-                <button class="border-0 text-white">Edit</button>
-              </a>
+            <div class="my-4 table_wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: auto">Name On Account</th>
+                    <th>Routing Number</th>
+                    <th>Account Number</th>
+                    <th>Account Holder Type</th>
+                    <th>Account Type</th>
+                    <th>Update</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="width: auto">tester</td>
+                    <td>*****3103</td>
+                    <td>*2345</td>
+                    <td>business</td>
+                    <td>checking</td>
+                    <td>
+                      <div class="refresh_container" role="button">
+                        <a href="add_billing.html">
+                          <img
+                            src="../assets/images/payroll/refresh.svg"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="mt-4" style="border: 1px solid lightgray">
+                <thead>
+                  <tr>
+                    <th style="width: auto">First Name</th>
+                    <th>Last Name</th>
+                    <th>Company</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-3" style="width: auto">Anne</td>
+                    <td class="py-3">Hathaway</td>
+                    <td class="py-3">Tester123</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
         </main>
