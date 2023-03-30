@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" />
     <!--    Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <title>TrakPay | Pending Payroll Errors</title>
+    <title>TrakPay | Email Notifcation</title>
 
     <!-- Nice Fade in affect -->
   </head>
@@ -45,10 +45,10 @@
         </div>
         <div class="sidebar_list">
           <div class="list_item">
-            <a href="index.html" class="d-flex gap-3">
+            <a href="../dashboard/index.html" class="d-flex gap-3">
               <!-- <img src={item?.activeIcon} /> -->
-              <img src="../assets/images/layout/dashboard-active.svg" />
-              <span class="active" id="list-text">Dashboard</span>
+              <img src="../assets/images/layout/dashboard.svg" />
+              <span id="list-text">Dashboard</span>
             </a>
           </div>
           <div class="list_item">
@@ -64,7 +64,7 @@
             </a>
           </div>
           <div class="list_item">
-            <a href="../upload_payroll/index.html" class="d-flex gap-3">
+            <a href="index.html" class="d-flex gap-3">
               <img src="../assets/images/layout/upload-payroll.svg" />
               <span class="">Upload Payroll</span>
             </a>
@@ -82,9 +82,9 @@
             </a>
           </div>
           <div class="list_item">
-            <a href="../email_notification/index.html" class="d-flex gap-3">
+            <a href="index.html" class="d-flex gap-3">
               <img src="../assets/images/layout/email-notification.svg" />
-              <span class="">Email Notification</span>
+              <span class="active">Email Notification</span>
             </a>
           </div>
         </div>
@@ -163,92 +163,84 @@
 
         <!------ Main Content ------>
         <main class="dashboard_content_wrapper">
-          <section class="px-4">
-            <div class="row gap-3">
-              <a
-                href="error_fixing.html"
-                class="payroll_error_card error_card px-4 d-flex flex-wrap flex-lg-nowrap justify-content-start gap-3 py-2"
-                style="cursor: pointer; text-decoration: none"
-              >
-                <img src="../assets/images/dashboard/error.svg" alt="" />
-                <p>
-                  You have 1 pending employee payroll errors that must be
-                  corrected before payroll can be processed. Please click here
-                  to fix pending errors.
-                </p>
-              </a>
+          <section class="email_notification pb-5">
+            <h1 class="title">Email Notification</h1>
+            <div class="email_content_wrapper">
+              <div class="d-flex align-items-center px-4 mt-5 email_header">
+                <div class="first_column">Type</div>
+                <div>Contact</div>
+              </div>
               <div
-                class="payroll_error_card px-4 d-flex flex-wrap flex-lg-nowrap justify-content-start gap-3 py-2"
-                style="cursor: pointer"
+                class="d-md-flex align-items-center gap-4 mt-5 mb-4 mb-md-3 px-sm-4"
               >
-                <img src="../assets/images/dashboard/error.svg" alt="" />
-                <p>
-                  The processing of payments for your paygo WC service has been
-                  put on hold for 1 or more of your policies due to the bank
-                  account tied to the policy having a failed payment. Please
-                  provide TrakPay a bank letter per the instructions in the
-                  email you recently received. Once our bank processing unit
-                  approves the letter, we will restart your service.
-                  Alternatively, if you have a new bank account, please enter
-                  your new account number credentials here.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Frequentry used links -->
-          <section class="frequent_links px-3">
-            <h1>Frequently Used Links</h1>
-            <div class="row ms-1 d-flex frequent_card_row">
-              <div class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
+                <div class="first_column">Billing Notification</div>
+                <div
+                  class="multiSelect w-100 w-sm-50 position-relative input px-0 mt-2 mt-md-0"
+                >
+                  <select
+                    data-placeholder="example@gmail.com"
+                    multiple
+                    class="chosen-select w-100 h-100 ps-3"
+                    name="test"
                   >
-                    <img
-                      src="../assets/images/dashboard/payroll-info.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Policy and Payroll Information</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    View policies and payroll information.
-                  </p>
-                </a>
+                    <option>employee1@gmail.com</option>
+                    <option>employee1@gmail.com</option>
+                  </select>
+                  <img
+                    src="../assets/images/dropdown.png"
+                    alt="Dropdown"
+                    class="position-absolute top-50 translate-middle-y"
+                    style="right: 15px"
+                  />
+                </div>
               </div>
-              <div class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
+              <div
+                class="d-md-flex align-items-center gap-4 mb-4 mb-md-3 px-sm-4"
+              >
+                <div class="first_column">Registration Notification</div>
+                <div
+                  class="multiSelect w-100 w-sm-50 position-relative input px-0 mt-2 mt-md-0"
+                >
+                  <select
+                    data-placeholder="example@gmail.com"
+                    multiple
+                    class="chosen-select w-100 h-100 ps-3"
+                    name="test"
                   >
-                    <img
-                      src="../assets/images/dashboard/employee-rost.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Employee Roster</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    View, add, and edit your employees.
-                  </p>
-                </a>
+                    <option>employee1@gmail.com</option>
+                    <option>employee1@gmail.com</option>
+                  </select>
+                  <img
+                    src="../assets/images/dropdown.png"
+                    alt="Dropdown"
+                    class="position-absolute top-50 translate-middle-y"
+                    style="right: 15px"
+                  />
+                </div>
               </div>
-              <label class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
+              <div class="d-md-flex align-items-center gap-4 mb-5 px-sm-4">
+                <div class="first_column">Error Notification</div>
+                <div
+                  class="multiSelect w-100 w-sm-50 position-relative input px-0 mt-2 mt-md-0"
+                >
+                  <select
+                    data-placeholder="example@gmail.com"
+                    multiple
+                    class="chosen-select w-100 h-100 ps-3"
+                    name="test"
                   >
-                    <img
-                      src="../assets/images/dashboard/upload.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Upload Payroll</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    Upload and import excel .csv payroll files (ask us for a
-                    template if you do not already have one).
-                  </p>
-                </a>
-              </label>
+                    <option>employee1@gmail.com</option>
+                    <option>employee1@gmail.com</option>
+                  </select>
+                  <img
+                    src="../assets/images/dropdown.png"
+                    alt="Dropdown"
+                    class="position-absolute top-50 translate-middle-y"
+                    style="right: 15px"
+                  />
+                </div>
+              </div>
+              <button>Save</button>
             </div>
           </section>
         </main>
@@ -290,5 +282,19 @@
 
     <!--Main JavaScript -->
     <script src="../assets/js/main.js"></script>
+
+    <!-- Library for multi select dropdown -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+    <link
+      href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css"
+      rel="stylesheet"
+    />
+
+    <script>
+      $(".chosen-select").chosen({
+        no_results_text: "Oops, nothing found!",
+      });
+    </script>
   </body>
 </html>

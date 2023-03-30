@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" />
     <!--    Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <title>TrakPay | Pending Payroll Errors</title>
+    <title>TrakPay | Contacts</title>
 
     <!-- Nice Fade in affect -->
   </head>
@@ -45,10 +45,10 @@
         </div>
         <div class="sidebar_list">
           <div class="list_item">
-            <a href="index.html" class="d-flex gap-3">
+            <a href="../dashboard/index.html" class="d-flex gap-3">
               <!-- <img src={item?.activeIcon} /> -->
-              <img src="../assets/images/layout/dashboard-active.svg" />
-              <span class="active" id="list-text">Dashboard</span>
+              <img src="../assets/images/layout/dashboard.svg" />
+              <span id="list-text">Dashboard</span>
             </a>
           </div>
           <div class="list_item">
@@ -64,7 +64,7 @@
             </a>
           </div>
           <div class="list_item">
-            <a href="../upload_payroll/index.html" class="d-flex gap-3">
+            <a href="index.html" class="d-flex gap-3">
               <img src="../assets/images/layout/upload-payroll.svg" />
               <span class="">Upload Payroll</span>
             </a>
@@ -76,9 +76,9 @@
             </a>
           </div>
           <div class="list_item">
-            <a href="../contacts/index.html" class="d-flex gap-3">
-              <img src="../assets/images/layout/contacts.svg" />
-              <span class="">Contacts</span>
+            <a href="index.html" class="d-flex gap-3">
+              <img src="../assets/images/layout/contact-active.svg" />
+              <span class="active">Contacts</span>
             </a>
           </div>
           <div class="list_item">
@@ -163,93 +163,78 @@
 
         <!------ Main Content ------>
         <main class="dashboard_content_wrapper">
-          <section class="px-4">
-            <div class="row gap-3">
-              <a
-                href="error_fixing.html"
-                class="payroll_error_card error_card px-4 d-flex flex-wrap flex-lg-nowrap justify-content-start gap-3 py-2"
-                style="cursor: pointer; text-decoration: none"
-              >
-                <img src="../assets/images/dashboard/error.svg" alt="" />
-                <p>
-                  You have 1 pending employee payroll errors that must be
-                  corrected before payroll can be processed. Please click here
-                  to fix pending errors.
-                </p>
-              </a>
-              <div
-                class="payroll_error_card px-4 d-flex flex-wrap flex-lg-nowrap justify-content-start gap-3 py-2"
-                style="cursor: pointer"
-              >
-                <img src="../assets/images/dashboard/error.svg" alt="" />
-                <p>
-                  The processing of payments for your paygo WC service has been
-                  put on hold for 1 or more of your policies due to the bank
-                  account tied to the policy having a failed payment. Please
-                  provide TrakPay a bank letter per the instructions in the
-                  email you recently received. Once our bank processing unit
-                  approves the letter, we will restart your service.
-                  Alternatively, if you have a new bank account, please enter
-                  your new account number credentials here.
-                </p>
-              </div>
+          <section class="pb-5 contacts_content">
+            <h1 class="title">Contact</h1>
+            <SliderIcon />
+            <div class="my-4 table_wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th style="width: auto">Role</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="width: auto">Admin</td>
+                    <td>craig</td>
+                    <td>bruno</td>
+                    <td>brunocraig@gmail.com</td>
+                    <td></td>
+                    <td class="d-flex gap-1">
+                      <div class="table_td_button" role="button">
+                        <img src="../assets/images/dashboard/edit.svg" alt="" />
+                      </div>
+                      <div
+                        class="table_td_button"
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#addContact"
+                      >
+                        <img
+                          src="../assets/images/dashboard/delete.svg"
+                          alt=""
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: auto">Admin</td>
+                    <td>craig</td>
+                    <td>bruno</td>
+                    <td>brunocraig@gmail.com</td>
+                    <td></td>
+                    <td class="d-flex gap-1">
+                      <div
+                        class="table_td_button"
+                        role="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#addContact"
+                      >
+                        <img src="../assets/images/dashboard/edit.svg" alt="" />
+                      </div>
+                      <div class="table_td_button" role="button">
+                        <img
+                          src="../assets/images/dashboard/delete.svg"
+                          alt=""
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </section>
-
-          <!-- Frequentry used links -->
-          <section class="frequent_links px-3">
-            <h1>Frequently Used Links</h1>
-            <div class="row ms-1 d-flex frequent_card_row">
-              <div class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
-                  >
-                    <img
-                      src="../assets/images/dashboard/payroll-info.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Policy and Payroll Information</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    View policies and payroll information.
-                  </p>
-                </a>
-              </div>
-              <div class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
-                  >
-                    <img
-                      src="../assets/images/dashboard/employee-rost.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Employee Roster</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    View, add, and edit your employees.
-                  </p>
-                </a>
-              </div>
-              <label class="freq_card_col">
-                <a href="#" style="text-decoration: none">
-                  <div
-                    class="d-flex flex-wrap flex-md-nowrap gap-2 align-items-center justify-content-center h-100"
-                  >
-                    <img
-                      src="../assets/images/dashboard/upload.svg"
-                      alt="Policy and Payroll Info"
-                    />
-                    <p class="card_text">Upload Payroll</p>
-                  </div>
-                  <p class="desc_text text-center">
-                    Upload and import excel .csv payroll files (ask us for a
-                    template if you do not already have one).
-                  </p>
-                </a>
-              </label>
-            </div>
+            <button
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#addContact"
+            >
+              Add
+            </button>
           </section>
         </main>
       </div>
@@ -280,6 +265,41 @@
         Copyright 2023 All rights reserved
       </p>
     </footer>
+
+    <!--Add contact Modal -->
+    <div
+      class="modal fade"
+      id="addContact"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <section class="addContact_modal py-4 px-4">
+            <h3 class="title">Add Contact</h3>
+            <form>
+              <div class="mb-2">
+                <input placeholder="First Name" class="input" />
+              </div>
+              <div class="mb-2">
+                <input placeholder="Last Name" class="input" />
+              </div>
+              <div class="mb-2">
+                <input placeholder="Email" class="input" />
+              </div>
+              <div class="mb-2">
+                <input placeholder="Phone" class="input" />
+              </div>
+              <div class="mt-4 d-flex gap-2">
+                <button type="submit" data-bs-dismiss="modal">Submit</button>
+                <button type="button" data-bs-dismiss="modal">Close</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script

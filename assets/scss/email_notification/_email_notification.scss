@@ -33,3 +33,25 @@
     }
   }
 }
+
+.multiSelect {
+  .chosen-container-multi {
+    width: 100% !important;
+    height: inherit;
+    .chosen-choices {
+      padding: 0 10px;
+      width: 100%;
+      min-height: 45px !important;
+      border: none !important;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: none !important;
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}
